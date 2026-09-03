@@ -52,3 +52,7 @@ h1 {
     cursor: pointer;
     font-weight: bold;
 }
+
+#cidade, #temperatura, #descricao {
+    color: white;
+}
