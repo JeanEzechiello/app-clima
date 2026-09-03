@@ -12,7 +12,13 @@ busca.addEventListener('click',  async function() {
     let resposta = await fetch(url)
     let dados = await resposta.json()
 
-    city.textContent = dados.name
-    temp.textContent = dados.main.temp
-    desc.textContent = dados.weather[0].description
+    if(dados.cod !== 200) {
+        city.textContent = "Ops! Não encontramos essa cidade no céu 🌥️"
+        temp.textContent = ''
+        desc.textContent = ''
+    } else {
+        city.textContent = dados.name
+        temp.textContent = dados.main.temp
+        desc.textContent = dados.weather[0].description
+    }  
 })
