@@ -8,10 +8,9 @@ let res = document.getElementById('res')
 busca.addEventListener('click',  async function() {
     let nomeCidade = cidade.value
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${nomeCidade}&appid=d2a55e77bcb934ef7a6b6cb963a593c1&units=metric&lang=pt_br`
-    console.log(url)
+
     let resposta = await fetch(url)
     let dados = await resposta.json()
-    console.log(dados)
 
     city.textContent = dados.name
     temp.textContent = dados.main.temp
