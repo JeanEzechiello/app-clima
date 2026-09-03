@@ -1,0 +1,12 @@
+let cidade = document.getElementById('town')
+let busca = document.getElementById('search')
+let city = document.getElementById('cidade')
+let temp = document.getElementById('temperatura')
+let desc = document.getElementById('descricao')
+let res = document.getElementById('res')
+
+busca.addEventListener('click', function() {
+    let nomeCidade = cidade.value
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${nomeCidade}&appid=d2a55e77bcb934ef7a6b6cb963a593c1&units=metric&lang=pt_br`
+    console.log(url)
+})
