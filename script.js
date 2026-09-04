@@ -23,6 +23,34 @@ async function buscarClima() {
 
         temp.textContent = dados.main.temp
         desc.textContent = dados.weather[0].description
+
+        let periodo = dados.weather[0].icon.charAt(dados.weather[0].icon.length - 1)
+
+        if (dados.weather[0].main === "Clear") {
+            if(periodo === "d") {
+                document.body.style.background = "linear-gradient(135deg, #4a90e2, #f5d76e)"
+            } else {
+                document.body.style.background = "linear-gradient(135deg, #0f2447, #2c3e70)"
+            }
+            
+        } else if (dados.weather[0].main === "Clouds") {
+            if(periodo === "d") {
+                document.body.style.background = "linear-gradient(135deg, #757f9a, #d7dde8)"
+            } else {
+                document.body.style.background = "linear-gradient(135deg, #2c3444, #4a5468)"
+            }
+
+        } else if (dados.weather[0].main === "Rain") {
+            if(periodo === "d") {
+                document.body.style.background = "linear-gradient(135deg, #3a4a5c, #2c3e50)"
+            } else {
+                document.body.style.background = "linear-gradient(135deg, #16222a, #3a6073)"
+            }
+
+            
+        } else {
+            document.body.style.background = "linear-gradient(135deg, #1e3c72, #4a7fc9)"
+}
     }  
 }
 
