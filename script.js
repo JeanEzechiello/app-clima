@@ -1,6 +1,7 @@
 let cidade = document.getElementById('town')
 let busca = document.getElementById('search')
 let city = document.getElementById('cidade')
+let icone = document.getElementById('icone')
 let temp = document.getElementById('temperatura')
 let desc = document.getElementById('descricao')
 let res = document.getElementById('res')
@@ -18,6 +19,8 @@ async function buscarClima() {
         desc.textContent = ''
     } else {
         city.textContent = dados.name
+        icone.src = `https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`
+
         temp.textContent = dados.main.temp
         desc.textContent = dados.weather[0].description
     }  
