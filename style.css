@@ -73,6 +73,29 @@ body {
     }
 }
 
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    animation: piscar 3s ease-in-out infinite ;
+}
+
+@keyframes piscar {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #card {
     background: rgba(255, 255, 255, 0.15);
     padding: 32px 24px;
