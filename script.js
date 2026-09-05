@@ -5,6 +5,7 @@ let icone = document.getElementById('icone')
 let temp = document.getElementById('temperatura')
 let desc = document.getElementById('descricao')
 let res = document.getElementById('res')
+let chuvaContainer = document.getElementById('chuva')
 
 async function buscarClima() {
     let nomeCidade = cidade.value
@@ -26,6 +27,8 @@ async function buscarClima() {
 
         let periodo = dados.weather[0].icon.charAt(dados.weather[0].icon.length - 1)
 
+        chuvaContainer.innerHTML = ''
+
         if (dados.weather[0].main === "Clear") {
             if(periodo === "d") {
                 document.body.style.background = "linear-gradient(135deg, #4a90e2, #f5d76e)"
@@ -41,6 +44,7 @@ async function buscarClima() {
             }
 
         } else if (dados.weather[0].main === "Rain") {
+                gerarChuva()
             if(periodo === "d") {
                 document.body.style.background = "linear-gradient(135deg, #3a4a5c, #2c3e50)"
             } else {
@@ -61,3 +65,14 @@ cidade.addEventListener('keydown', function(event){
         buscarClima()
     }
 });
+
+function gerarChuva() {
+    for(let i = 0; i < 200; i++) {
+        let gota = document.createElement('div')
+        let posicao = Math.floor(Math.random() * 100)
+        gota.style.left = posicao + '%'
+        gota.classList.add('gota')
+        chuvaContainer.appendChild(gota)
+        gota.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's'
+    }
+}

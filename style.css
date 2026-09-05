@@ -47,8 +47,29 @@ body {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(100vw)
+    }
+}
+
+.gota {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: lightblue;
+    opacity: 0.5;
+    top: -20px;
+    animation: gotas 20s ease-in infinite;
+}
+
+@keyframes gotas {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100vh);
     }
 }
 
